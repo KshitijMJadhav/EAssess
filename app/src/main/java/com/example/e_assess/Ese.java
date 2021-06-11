@@ -67,7 +67,7 @@ public class Ese extends AppCompatActivity {
         firebase=FirebaseDatabase.getInstance();
         user= FirebaseAuth.getInstance().getCurrentUser();
         Uid=user.getUid();
-        Toast.makeText(this, Uid, Toast.LENGTH_SHORT).show();
+
         database=firebase.getReference();
         totals11ise2=findViewById(R.id.totaleses1);
         totals22ise2=findViewById(R.id.totaleses2);
@@ -92,101 +92,6 @@ public class Ese extends AppCompatActivity {
         stu3R5=(EditText)findViewById(R.id.rubric5esestu3);
         stu3total= (TextView)findViewById(R.id.Total3ese) ;
 
-        /*TextWatcher textWatcher=new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if(!stu1R1.getText().toString().equals("")&&!stu1R2.getText().toString().equals("")&&stu1R3.getText().toString().equals("")&&!stu1R4.getText().toString().equals("")&&stu1R5.getText().toString().equals(""))
-                {
-
-                    int R11=Integer.parseInt(stu1R1.getText().toString());
-                    int R12=Integer.parseInt(stu1R2.getText().toString());
-                    int R13=Integer.parseInt(stu1R3.getText().toString());
-                    int R14=Integer.parseInt(stu1R4.getText().toString());
-                    int R15=Integer.parseInt(stu1R5.getText().toString());
-                    stu1total.setText(String.valueOf(R11 + R12 + R13 + R14 + R15));
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        };
-        stu1R1.addTextChangedListener(textWatcher);
-        stu1R2.addTextChangedListener(textWatcher);
-        stu1R3.addTextChangedListener(textWatcher);
-        stu1R4.addTextChangedListener(textWatcher);
-        stu1R5.addTextChangedListener(textWatcher);
-
-        TextWatcher textWatcher1=new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if(!stu2R1.getText().toString().equals("")&&!stu2R2.getText().toString().equals("")&&stu2R3.getText().toString().equals("")&&!stu2R4.getText().toString().equals("")&&stu2R5.getText().toString().equals(""))
-                {
-
-                    int R21=Integer.parseInt(stu1R1.getText().toString());
-                    int R22=Integer.parseInt(stu1R2.getText().toString());
-                    int R23=Integer.parseInt(stu1R3.getText().toString());
-                    int R24=Integer.parseInt(stu1R4.getText().toString());
-                    Integer R25=Integer.parseInt(stu1R5.getText().toString());
-                    Toast.makeText(Assignmarksise.this, "Pranav", Toast.LENGTH_SHORT).show();
-                //    int t = R21+R22+R23+R24+R24+R25;
-                 //   String s = t.toString();
-                    stu2total.setText(String.valueOf(R21 + R22 + R23 + R24 + R25));
-
-
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        };
-        stu2R1.addTextChangedListener(textWatcher1);
-        stu2R2.addTextChangedListener(textWatcher1);
-        stu2R3.addTextChangedListener(textWatcher1);
-        stu2R4.addTextChangedListener(textWatcher1);
-        stu2R5.addTextChangedListener(textWatcher1);
-
-        TextWatcher textWatcher2=new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if(!stu3R1.getText().toString().equals("")&&!stu3R2.getText().toString().equals("")&&stu3R3.getText().toString().equals("")&&!stu3R4.getText().toString().equals("")&&stu3R5.getText().toString().equals(""))
-                {
-                    int R31=Integer.parseInt(stu1R1.getText().toString());
-                    int R32=Integer.parseInt(stu1R2.getText().toString());
-                    int R33=Integer.parseInt(stu1R3.getText().toString());
-                    int R34=Integer.parseInt(stu1R4.getText().toString());
-                    int R35=Integer.parseInt(stu1R5.getText().toString());
-                    stu3total.setText(String.valueOf(R31 + R32 + R33 + R34 + R35));
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        };
-        stu3R1.addTextChangedListener(textWatcher2);
-        stu3R2.addTextChangedListener(textWatcher2);
-        stu3R3.addTextChangedListener(textWatcher2);
-        stu3R4.addTextChangedListener(textWatcher2);
-        stu3R5.addTextChangedListener(textWatcher2);*/
 
         totals11ise2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -409,9 +314,6 @@ public class Ese extends AppCompatActivity {
                                                 @Override
                                                 public void onSuccess(Void aVoid) {
 
-                                                    Intent intent = new Intent(Ese.this,navActivity.class);
-                                                    startActivity(intent);
-                                                    finish();
                                                 }
                                             })
                                             .addOnFailureListener(new OnFailureListener() {
@@ -449,9 +351,7 @@ public class Ese extends AppCompatActivity {
                                                 @Override
                                                 public void onSuccess(Void aVoid) {
 
-                                                    Intent intent = new Intent(Ese.this,navActivity.class);
-                                                    startActivity(intent);
-                                                    finish();
+
                                                 }
                                             })
                                             .addOnFailureListener(new OnFailureListener() {

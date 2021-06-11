@@ -77,6 +77,7 @@
                             android:hint="out of 5"
                             android:gravity="center"
                             android:layout_weight="3"
+                            android:inputType="number"
                             android:singleLine="false"
                             android:textColor="#FFFFFF" />
                     </LinearLayout>
@@ -107,6 +108,7 @@
                             android:layout_height="wrap_content"
                             android:hint="out of 5"
                             android:gravity="center"
+                            android:inputType="number"
                             android:layout_weight="3"
                             android:singleLine="false"
                             android:textColor="#FFFFFF" />
@@ -138,6 +140,7 @@
                             android:layout_height="wrap_content"
                             android:hint="out of 5"
                             android:gravity="center"
+                            android:inputType="number"
                             android:layout_weight="3"
                             android:singleLine="false"
                             android:textColor="#FFFFFF" />
@@ -169,6 +172,7 @@
                                 android:hint="out of 5"
                                 android:gravity="center"
                                 android:layout_weight="3"
+                                android:inputType="number"
                                 android:singleLine="false"
                                 android:textColor="#FFFFFF" />
                         </LinearLayout>
@@ -201,6 +205,7 @@
                             android:layout_height="wrap_content"
                             android:hint="out of 5"
                             android:gravity="center"
+                            android:inputType="number"
                             android:layout_weight="3"
                             android:singleLine="false"
                             android:textColor="#FFFFFF" />
@@ -311,6 +316,7 @@
                             android:hint="out of 5"
                             android:layout_weight="3"
                             android:gravity="center"
+                            android:inputType="number"
                             android:singleLine="false"
                             android:textColor="#FFFFFF" />
                     </LinearLayout>
@@ -341,6 +347,7 @@
                             android:layout_height="wrap_content"
                             android:hint="out of 5"
                             android:gravity="center"
+                            android:inputType="number"
                             android:layout_weight="3"
                             android:singleLine="false"
                             android:textColor="#FFFFFF" />
@@ -373,6 +380,7 @@
                             android:hint="out of 5"
                             android:gravity="center"
                             android:layout_weight="3"
+                            android:inputType="number"
                             android:singleLine="false"
                             android:textColor="#FFFFFF" />
                     </LinearLayout>
@@ -403,6 +411,7 @@
                                 android:hint="out of 5"
                                 android:gravity="center"
                                 android:layout_weight="3"
+                                android:inputType="number"
                                 android:singleLine="false"
                                 android:textColor="#FFFFFF" />
                         </LinearLayout>
@@ -435,6 +444,7 @@
                             android:layout_height="wrap_content"
                             android:hint="out of 5"
                             android:layout_weight="3"
+                            android:inputType="number"
                             android:gravity="center"
                             android:singleLine="false"
                             android:textColor="#FFFFFF" />
@@ -544,6 +554,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="out of 5"
+                            android:inputType="number"
                             android:gravity="center"
                             android:layout_weight="3"
                             android:singleLine="false"
@@ -575,6 +586,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="out of 5"
+                            android:inputType="number"
                             android:layout_weight="3"
                             android:gravity="center"
                             android:singleLine="false"
@@ -607,6 +619,7 @@
                             android:layout_height="wrap_content"
                             android:hint="out of 5"
                             android:layout_weight="3"
+                            android:inputType="number"
                             android:gravity="center"
                             android:singleLine="false"
                             android:textColor="#FFFFFF" />
@@ -637,6 +650,7 @@
                                 android:layout_height="wrap_content"
                                 android:hint="out of 5"
                                 android:layout_weight="3"
+                                android:inputType="number"
                                 android:gravity="center"
                                 android:singleLine="false"
                                 android:textColor="#FFFFFF" />
@@ -670,6 +684,7 @@
                             android:layout_height="wrap_content"
                             android:hint="out of 5"
                             android:gravity="center"
+                            android:inputType="number"
                             android:layout_weight="3"
                             android:singleLine="false"
                             android:textColor="#FFFFFF" />

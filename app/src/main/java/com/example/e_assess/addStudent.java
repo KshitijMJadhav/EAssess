@@ -64,7 +64,7 @@ public class addStudent extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_student);
 
-        //
+
         auth = FirebaseAuth.getInstance();
         mRootRef = FirebaseDatabase.getInstance().getReference();
 
@@ -73,7 +73,7 @@ public class addStudent extends AppCompatActivity {
         firebase=FirebaseDatabase.getInstance();
         user= FirebaseAuth.getInstance().getCurrentUser();
         Uid=user.getUid();
-        Toast.makeText(this, Uid, Toast.LENGTH_SHORT).show();
+
         database=firebase.getReference();
         EditText editTextgroupno, editTextTopicName, editTextStudent1, editTextStudent2, editTextStudent3,editTextguidename;
         save = findViewById(R.id.savedatabase);
@@ -103,14 +103,8 @@ public class addStudent extends AppCompatActivity {
                     studentData.put("Student1", stu1);
                     studentData.put("Student2", stu2);
                     studentData.put("Student3", stu3);
-//                HashMap<String,Object> hashMap = new HashMap<>();
-//                hashMap.put("editTextgroupno",groupNo);
-//                hashMap.put("editTextTopicName",topicName);
-//                hashMap.put("editTextStudent1",stu1);
-//                hashMap.put("editTextStudent2",stu2);
-//                hashMap.put("editTextStudent3",stu3);
 
-                   // database.child("Users").child(Uid).child("groups").child(groupNo).setValue(studentData)
+
                     mRootRef.child("Groups").child(auth.getCurrentUser().getUid()).child(guidename).child(groupNo).setValue(studentData)
                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override

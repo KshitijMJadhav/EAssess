@@ -1,5 +1,6 @@
 package com.example.e_assess;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -21,6 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -57,7 +59,6 @@ public class navActivity extends AppCompatActivity {
         View headerView = navigationView.getHeaderView(0);
         txt1 = (TextView) headerView.findViewById(R.id.textView);
         txt1.setText(mailid);
-        Toast.makeText(this, getIntent().getStringExtra("stud1name"), Toast.LENGTH_SHORT).show();
 
        // reference = FirebaseDatabase.getInstance().getReference("Users");
        // userID = user.getUid();
@@ -128,7 +129,28 @@ public class navActivity extends AppCompatActivity {
     public void feedbackAct(MenuItem item) {
         startActivity(new Intent(navActivity.this, FeedbackAct.class));
     }
-
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setCancelable(false);
+        builder.setMessage("Do you want to Exit?");
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //if user pressed "yes", then he is allowed to exit from application
+                finish();
+            }
+        });
+        builder.setNegativeButton("No",new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //if user select "No", just cancel this dialog and continue with app
+                dialog.cancel();
+            }
+        });
+        AlertDialog alert=builder.create();
+        alert.show();
+    }
 
     //public void logoutMethod(){
     //    Toast.makeText(this, "Logout button clicked!!", Toast.LENGTH_SHORT).show();

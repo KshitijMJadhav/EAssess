@@ -14,8 +14,8 @@
             android:title="Assessment" />
         <item
             android:id="@+id/nav_slideshow"
-            android:icon="@drawable/download__v1"
-            android:title="@string/download" />
+            android:icon="@drawable/summ"
+            android:title="Summary" />
         <item
             android:id="@+id/log_out"
             android:icon="@drawable/logout11"

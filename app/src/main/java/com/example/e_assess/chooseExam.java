@@ -71,7 +71,7 @@ public class chooseExam extends AppCompatActivity {
                                 intent.putExtra("stud2name", student2);
                                 intent.putExtra("stud3name", student3);
                                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                                startActivity(intent);
+                                //startActivity(intent);
                             }
                         })
                         .addOnFailureListener(new OnFailureListener() {
@@ -96,7 +96,7 @@ public class chooseExam extends AppCompatActivity {
                                 intent.putExtra("stud2name", student2);
                                 intent.putExtra("stud3name", student3);
                                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                                startActivity(intent);
+                                //startActivity(intent);
                             }
                         })
                         .addOnFailureListener(new OnFailureListener() {

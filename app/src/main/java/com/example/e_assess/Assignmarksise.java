@@ -90,7 +90,7 @@ public class Assignmarksise extends AppCompatActivity {
         firebase=FirebaseDatabase.getInstance();
         user= FirebaseAuth.getInstance().getCurrentUser();
         Uid=user.getUid();
-        Toast.makeText(this, Uid, Toast.LENGTH_SHORT).show();
+
         database=firebase.getReference();
         totals11=findViewById(R.id.totals1);
         totals22=findViewById(R.id.totals2);
@@ -115,101 +115,7 @@ public class Assignmarksise extends AppCompatActivity {
         stu3R5=(EditText)findViewById(R.id.rubric5stu3);
         stu3total= (TextView)findViewById(R.id.Total3) ;
 
-        /*TextWatcher textWatcher=new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-            }
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if(!stu1R1.getText().toString().equals("")&&!stu1R2.getText().toString().equals("")&&stu1R3.getText().toString().equals("")&&!stu1R4.getText().toString().equals("")&&stu1R5.getText().toString().equals(""))
-                {
-
-                    int R11=Integer.parseInt(stu1R1.getText().toString());
-                    int R12=Integer.parseInt(stu1R2.getText().toString());
-                    int R13=Integer.parseInt(stu1R3.getText().toString());
-                    int R14=Integer.parseInt(stu1R4.getText().toString());
-                    int R15=Integer.parseInt(stu1R5.getText().toString());
-                    stu1total.setText(String.valueOf(R11 + R12 + R13 + R14 + R15));
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        };
-        stu1R1.addTextChangedListener(textWatcher);
-        stu1R2.addTextChangedListener(textWatcher);
-        stu1R3.addTextChangedListener(textWatcher);
-        stu1R4.addTextChangedListener(textWatcher);
-        stu1R5.addTextChangedListener(textWatcher);
-
-        TextWatcher textWatcher1=new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if(!stu2R1.getText().toString().equals("")&&!stu2R2.getText().toString().equals("")&&stu2R3.getText().toString().equals("")&&!stu2R4.getText().toString().equals("")&&stu2R5.getText().toString().equals(""))
-                {
-
-                    int R21=Integer.parseInt(stu1R1.getText().toString());
-                    int R22=Integer.parseInt(stu1R2.getText().toString());
-                    int R23=Integer.parseInt(stu1R3.getText().toString());
-                    int R24=Integer.parseInt(stu1R4.getText().toString());
-                    Integer R25=Integer.parseInt(stu1R5.getText().toString());
-                    Toast.makeText(Assignmarksise.this, "Pranav", Toast.LENGTH_SHORT).show();
-                //    int t = R21+R22+R23+R24+R24+R25;
-                 //   String s = t.toString();
-                    stu2total.setText(String.valueOf(R21 + R22 + R23 + R24 + R25));
-
-
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        };
-        stu2R1.addTextChangedListener(textWatcher1);
-        stu2R2.addTextChangedListener(textWatcher1);
-        stu2R3.addTextChangedListener(textWatcher1);
-        stu2R4.addTextChangedListener(textWatcher1);
-        stu2R5.addTextChangedListener(textWatcher1);
-
-        TextWatcher textWatcher2=new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if(!stu3R1.getText().toString().equals("")&&!stu3R2.getText().toString().equals("")&&stu3R3.getText().toString().equals("")&&!stu3R4.getText().toString().equals("")&&stu3R5.getText().toString().equals(""))
-                {
-                    int R31=Integer.parseInt(stu1R1.getText().toString());
-                    int R32=Integer.parseInt(stu1R2.getText().toString());
-                    int R33=Integer.parseInt(stu1R3.getText().toString());
-                    int R34=Integer.parseInt(stu1R4.getText().toString());
-                    int R35=Integer.parseInt(stu1R5.getText().toString());
-                    stu3total.setText(String.valueOf(R31 + R32 + R33 + R34 + R35));
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        };
-        stu3R1.addTextChangedListener(textWatcher2);
-        stu3R2.addTextChangedListener(textWatcher2);
-        stu3R3.addTextChangedListener(textWatcher2);
-        stu3R4.addTextChangedListener(textWatcher2);
-        stu3R5.addTextChangedListener(textWatcher2);*/
 
         totals11.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -429,15 +335,13 @@ public class Assignmarksise extends AppCompatActivity {
                                 @Override
                                 public void onSuccess(Void aVoid) {
 
-                                   // Intent intent = new Intent(Assignmarksise.this,navActivity.class);
+
                                     mRootRef.child("MarkStud").child(stud1n).child("ISE1").setValue(finalmarksstud1)
                                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                                 @Override
                                                 public void onSuccess(Void aVoid) {
 
-                                                    Intent intent = new Intent(Assignmarksise.this,navActivity.class);
-                                                    startActivity(intent);
-                                                    finish();
+
                                                 }
                                             })
                                             .addOnFailureListener(new OnFailureListener() {
@@ -459,7 +363,7 @@ public class Assignmarksise extends AppCompatActivity {
                             });
 
 
-                    // for stud2
+
                     Map<String, String> student2La1marks = new HashMap<String, String>();
                     student2La1marks.put("TotalIse1",finalmarksstud2);
                     student2La1marks.put("Problem_Statement_Identification",stu21);
@@ -473,15 +377,12 @@ public class Assignmarksise extends AppCompatActivity {
                                 @Override
                                 public void onSuccess(Void aVoid) {
 
-                                  //  Intent intent = new Intent(Assignmarksise.this,navActivity.class);
+
                                     mRootRef.child("MarkStud").child(stud2n).child("ISE1").setValue(finalmarksstud2)
                                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                                 @Override
                                                 public void onSuccess(Void aVoid) {
 
-                                                    Intent intent = new Intent(Assignmarksise.this,navActivity.class);
-                                                    startActivity(intent);
-                                                    finish();
                                                 }
                                             })
                                             .addOnFailureListener(new OnFailureListener() {
@@ -490,8 +391,7 @@ public class Assignmarksise extends AppCompatActivity {
                                                     Toast.makeText(Assignmarksise.this, " " + e.getMessage(), Toast.LENGTH_SHORT).show();
                                                 }
                                             });
-                                   // startActivity(intent);
-                                    //finish();
+
                                 }
                             })
                             .addOnFailureListener(new OnFailureListener() {
@@ -517,7 +417,7 @@ public class Assignmarksise extends AppCompatActivity {
                                 @Override
                                 public void onSuccess(Void aVoid) {
                                     Toast.makeText(Assignmarksise.this, "Added Successfully", Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(Assignmarksise.this,navActivity.class);
+
                                     mRootRef.child("MarkStud").child(stud3n).child("ISE1").setValue(finalmarksstud3)
                                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                                 @Override
@@ -534,8 +434,7 @@ public class Assignmarksise extends AppCompatActivity {
                                                     Toast.makeText(Assignmarksise.this, " " + e.getMessage(), Toast.LENGTH_SHORT).show();
                                                 }
                                             });
-                                    startActivity(intent);
-                                    finish();
+
                                 }
                             })
                             .addOnFailureListener(new OnFailureListener() {

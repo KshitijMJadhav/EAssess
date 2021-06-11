@@ -64,15 +64,13 @@ public class Recyclemarks extends AppCompatActivity {
         totalese=(TextView)findViewById(R.id.Totalese11) ;
 
         studentt1 =getIntent().getStringExtra("studname").toString();
-//        studentt2=getIntent().getStringExtra("stud22name").toString();
-//        Log.i("stud1",studentt1);
-        //Log.i("stud",studentt2);
+
         final String stuname=studentt1;
         refise = FirebaseDatabase.getInstance().getReference("Marks").child(studentt1).child("ISE1");
         refise2= FirebaseDatabase.getInstance().getReference("Marks").child(studentt1).child("ISE2");
         refmse = FirebaseDatabase.getInstance().getReference("Marks").child(studentt1).child("MSE");
         refese = FirebaseDatabase.getInstance().getReference("Marks").child(studentt1).child("ESE");
-        Toast.makeText(Recyclemarks.this, studentt1, Toast.LENGTH_SHORT).show();
+
         //review.setHasFixedSize(true);
         //review.setLayoutManager(new LinearLayoutManager(this));
         //list = new ArrayList<>();
@@ -117,12 +115,7 @@ public class Recyclemarks extends AppCompatActivity {
                            R5S1ise1 = dat.getValue(String.class);
                           R5Ise1.setText(R5S1ise1);
                        }
-                       /*R1s1ise = dat.child("").getValue(String.class);
-                       R2S1ise1 = dat.child("Objective_Defined").getValue(String.class);
-                       R3S1ise1 = dat.child("Tools_and_Methodology").getValue(String.class);
-                       R4S1ise1 = dat.child("Question_and_Answer").getValue(String.class);
-                       R5S1ise1 = dat.child(.getValue(String.class);
-                       Toast.makeText(Recyclemarks.this, Totalise11, Toast.LENGTH_SHORT).show();*/
+
 
                    }
 
@@ -171,12 +164,7 @@ public class Recyclemarks extends AppCompatActivity {
                         R5S1ise1 = dat.getValue(String.class);
                         R5Ise2.setText(R5S1ise1);
                     }
-                       /*R1s1ise = dat.child("").getValue(String.class);
-                       R2S1ise1 = dat.child("Objective_Defined").getValue(String.class);
-                       R3S1ise1 = dat.child("Tools_and_Methodology").getValue(String.class);
-                       R4S1ise1 = dat.child("Question_and_Answer").getValue(String.class);
-                       R5S1ise1 = dat.child(.getValue(String.class);
-                       Toast.makeText(Recyclemarks.this, Totalise11, Toast.LENGTH_SHORT).show();*/
+
 
                 }
 
@@ -191,7 +179,7 @@ public class Recyclemarks extends AppCompatActivity {
         refmse.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                //for (DataSnapshot snapshot1:snapshot.getChildren()) {
+
                 String Totalise11=null , R1s1ise=null , R2S1ise1=null , R3S1ise1=null , R4S1ise1=null , R5S1ise1=null ;
                 for (DataSnapshot dat : snapshot.getChildren()) {
                     if(dat.getKey().equals("TotalMse"))
@@ -224,12 +212,7 @@ public class Recyclemarks extends AppCompatActivity {
                         R5S1ise1 = dat.getValue(String.class);
                         R5mse.setText(R5S1ise1);
                     }
-                       /*R1s1ise = dat.child("").getValue(String.class);
-                       R2S1ise1 = dat.child("Objective_Defined").getValue(String.class);
-                       R3S1ise1 = dat.child("Tools_and_Methodology").getValue(String.class);
-                       R4S1ise1 = dat.child("Question_and_Answer").getValue(String.class);
-                       R5S1ise1 = dat.child(.getValue(String.class);
-                       Toast.makeText(Recyclemarks.this, Totalise11, Toast.LENGTH_SHORT).show();*/
+
 
                 }
 
@@ -244,7 +227,7 @@ public class Recyclemarks extends AppCompatActivity {
         refese.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                //for (DataSnapshot snapshot1:snapshot.getChildren()) {
+
                 String Totalise11=null , R1s1ise=null , R2S1ise1=null , R3S1ise1=null , R4S1ise1=null , R5S1ise1=null ;
                 for (DataSnapshot dat : snapshot.getChildren()) {
                     if(dat.getKey().equals("TotalEse"))
@@ -277,12 +260,7 @@ public class Recyclemarks extends AppCompatActivity {
                         R5S1ise1 = dat.getValue(String.class);
                         R5ese.setText(R5S1ise1);
                     }
-                       /*R1s1ise = dat.child("").getValue(String.class);
-                       R2S1ise1 = dat.child("Objective_Defined").getValue(String.class);
-                       R3S1ise1 = dat.child("Tools_and_Methodology").getValue(String.class);
-                       R4S1ise1 = dat.child("Question_and_Answer").getValue(String.class);
-                       R5S1ise1 = dat.child(.getValue(String.class);
-                       Toast.makeText(Recyclemarks.this, Totalise11, Toast.LENGTH_SHORT).show();*/
+
 
                 }
 
