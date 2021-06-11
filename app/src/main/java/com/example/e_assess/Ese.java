@@ -5,57 +5,29 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
-import android.app.AlertDialog;
-import android.database.DatabaseErrorHandler;
-import android.os.Bundle;
-import android.app.ProgressDialog;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.database.Cursor;
 
-import android.graphics.Color;
-import android.net.Uri;
-import android.os.AsyncTask;
-import android.provider.MediaStore;
-
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.internal.TextWatcherAdapter;
 import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
-import com.google.android.material.snackbar.SnackbarContentLayout;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
-import java.net.URI;
+
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Scanner;
+
 public class Ese extends AppCompatActivity {
     String  stu11,stu12,stu13,stu14,stu15,stu21,stu22,stu23,stu24,stu25,stu31,stu32,stu34,stu35,stu33,finalmarksstud1,finalmarksstud2,finalmarksstud3;
     TextView stu1total,stu2total,stu3total;
@@ -106,7 +78,7 @@ public class Ese extends AppCompatActivity {
         stu1R3=(EditText)findViewById(R.id.rubric3esestu1);
         stu1R4=(EditText)findViewById(R.id.rubric4esestu1);
         stu1R5=(EditText)findViewById(R.id.rubric5esestu1);
-        stu1total=(TextView) findViewById(R.id.Totalese);
+        stu1total=(TextView) findViewById(R.id.Totalese11);
         stu2R1=(EditText)findViewById(R.id.rubric1esestu2) ;
         stu2R2=(EditText)findViewById(R.id.rubric2esestu2) ;
         stu2R3=(EditText)findViewById(R.id.rubric3esestu2) ;
@@ -422,20 +394,32 @@ public class Ese extends AppCompatActivity {
                 } else {
                     Map<String, String> student1La1marks = new HashMap<String, String>();
                     student1La1marks.put("TotalEse",finalmarksstud1);
-                    student1La1marks.put("Objective Achieved",stu11);
-                    student1La1marks.put("Result And Analysis",stu12);
+                    student1La1marks.put("Objective_Achieved_ese",stu11);
+                    student1La1marks.put("Result_And_Analysis",stu12);
                     student1La1marks.put("Novelty",stu13);
-                    student1La1marks.put("Presentation skills",stu14);
+                    student1La1marks.put("Presentation_skills_ese",stu14);
                     student1La1marks.put("Application(social,dept,eco,etc)",stu15);
 
                     mRootRef.child("Marks").child(stud1n).child("ESE").setValue(student1La1marks)
                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
+                                    mRootRef.child("MarkStud").child(stud1n).child("ESE").setValue(finalmarksstud1)
+                                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                @Override
+                                                public void onSuccess(Void aVoid) {
 
-                                    Intent intent = new Intent(Ese.this,navActivity.class);
-                                    startActivity(intent);
-                                    finish();
+                                                    Intent intent = new Intent(Ese.this,navActivity.class);
+                                                    startActivity(intent);
+                                                    finish();
+                                                }
+                                            })
+                                            .addOnFailureListener(new OnFailureListener() {
+                                                @Override
+                                                public void onFailure(@NonNull Exception e) {
+                                                    Toast.makeText(Ese.this, " " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                                                }
+                                            });
                                 }
                             })
                             .addOnFailureListener(new OnFailureListener() {
@@ -449,10 +433,10 @@ public class Ese extends AppCompatActivity {
                     // for stud2
                     Map<String, String> student2La1marks = new HashMap<String, String>();
                     student2La1marks.put("TotalEse",finalmarksstud2);
-                    student2La1marks.put("Objective Achieved",stu21);
-                    student2La1marks.put("Result And Analysis",stu22);
+                    student2La1marks.put("Objective_Achieved_ese",stu21);
+                    student2La1marks.put("Result_And_Analysis",stu22);
                     student2La1marks.put("Novelty",stu23);
-                    student2La1marks.put("Presentation skills",stu24);
+                    student2La1marks.put("Presentation_skills_ese",stu24);
                     student2La1marks.put("Application(social,dept,eco,etc)",stu25);
 
                     mRootRef.child("Marks").child(stud2n).child("ESE").setValue(student2La1marks)
@@ -460,9 +444,22 @@ public class Ese extends AppCompatActivity {
                                 @Override
                                 public void onSuccess(Void aVoid) {
 
-                                    Intent intent = new Intent(Ese.this,navActivity.class);
-                                    startActivity(intent);
-                                    finish();
+                                    mRootRef.child("MarkStud").child(stud2n).child("ESE").setValue(finalmarksstud2)
+                                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                @Override
+                                                public void onSuccess(Void aVoid) {
+
+                                                    Intent intent = new Intent(Ese.this,navActivity.class);
+                                                    startActivity(intent);
+                                                    finish();
+                                                }
+                                            })
+                                            .addOnFailureListener(new OnFailureListener() {
+                                                @Override
+                                                public void onFailure(@NonNull Exception e) {
+                                                    Toast.makeText(Ese.this, " " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                                                }
+                                            });
                                 }
                             })
                             .addOnFailureListener(new OnFailureListener() {
@@ -477,10 +474,10 @@ public class Ese extends AppCompatActivity {
                     // for stud 3
                     Map<String, String> student3La1marks = new HashMap<String, String>();
                     student3La1marks.put("TotalEse",finalmarksstud3);
-                    student3La1marks.put("Objective Achieved",stu31);
-                    student3La1marks.put("Result And Analysis",stu32);
+                    student3La1marks.put("Objective_Achieved_ese",stu31);
+                    student3La1marks.put("Result_And_Analysis",stu32);
                     student3La1marks.put("Novelty",stu33);
-                    student3La1marks.put("Presentation skills",stu34);
+                    student3La1marks.put("Presentation_skills_ese",stu34);
                     student3La1marks.put("Application(social,dept,eco,etc)",stu35);
 
                     mRootRef.child("Marks").child(stud3n).child("ESE").setValue(student3La1marks)
@@ -488,9 +485,22 @@ public class Ese extends AppCompatActivity {
                                 @Override
                                 public void onSuccess(Void aVoid) {
                                     Toast.makeText(Ese.this, "Added Successfully", Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(Ese.this,navActivity.class);
-                                    startActivity(intent);
-                                    finish();
+                                    mRootRef.child("MarkStud").child(stud3n).child("ESE").setValue(finalmarksstud3)
+                                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                @Override
+                                                public void onSuccess(Void aVoid) {
+
+                                                    Intent intent = new Intent(Ese.this,navActivity.class);
+                                                    startActivity(intent);
+                                                    finish();
+                                                }
+                                            })
+                                            .addOnFailureListener(new OnFailureListener() {
+                                                @Override
+                                                public void onFailure(@NonNull Exception e) {
+                                                    Toast.makeText(Ese.this, " " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                                                }
+                                            });
                                 }
                             })
                             .addOnFailureListener(new OnFailureListener() {

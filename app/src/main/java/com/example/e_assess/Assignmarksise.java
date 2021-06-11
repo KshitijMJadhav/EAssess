@@ -417,11 +417,11 @@ public class Assignmarksise extends AppCompatActivity {
                 } else {
                     Map<String, String> student1La1marks = new HashMap<String, String>();
                     student1La1marks.put("TotalIse1",finalmarksstud1);
-                    student1La1marks.put("Problem Statement Identification",stu11);
-                    student1La1marks.put("Objective Defined",stu12);
-                    student1La1marks.put("Tools and Methodology",stu13);
-                    student1La1marks.put("Question and Answer",stu14);
-                    student1La1marks.put("Presentation Skills",stu15);
+                    student1La1marks.put("Problem_Statement_Identification",stu11);
+                    student1La1marks.put("Objective_Defined",stu12);
+                    student1La1marks.put("Tools_and_Methodology",stu13);
+                    student1La1marks.put("Question_and_Answer",stu14);
+                    student1La1marks.put("Presentation_Skills",stu15);
 
 
                     mRootRef.child("Marks").child(stud1n).child("ISE1").setValue(student1La1marks)
@@ -429,9 +429,26 @@ public class Assignmarksise extends AppCompatActivity {
                                 @Override
                                 public void onSuccess(Void aVoid) {
 
-                                    Intent intent = new Intent(Assignmarksise.this,navActivity.class);
-                                    startActivity(intent);
-                                    finish();
+                                   // Intent intent = new Intent(Assignmarksise.this,navActivity.class);
+                                    mRootRef.child("MarkStud").child(stud1n).child("ISE1").setValue(finalmarksstud1)
+                                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                @Override
+                                                public void onSuccess(Void aVoid) {
+
+                                                    Intent intent = new Intent(Assignmarksise.this,navActivity.class);
+                                                    startActivity(intent);
+                                                    finish();
+                                                }
+                                            })
+                                            .addOnFailureListener(new OnFailureListener() {
+                                                @Override
+                                                public void onFailure(@NonNull Exception e) {
+                                                    Toast.makeText(Assignmarksise.this, " " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                                                }
+                                            });
+
+                                    //startActivity(intent);
+                                    //finish();
                                 }
                             })
                             .addOnFailureListener(new OnFailureListener() {
@@ -445,20 +462,36 @@ public class Assignmarksise extends AppCompatActivity {
                     // for stud2
                     Map<String, String> student2La1marks = new HashMap<String, String>();
                     student2La1marks.put("TotalIse1",finalmarksstud2);
-                    student2La1marks.put("Problem Statement Identification",stu21);
-                    student2La1marks.put("Objective Defined",stu22);
-                    student2La1marks.put("Tools and Methodology",stu23);
-                    student2La1marks.put("Question and Answer",stu24);
-                    student2La1marks.put("Presentation Skills",stu25);
+                    student2La1marks.put("Problem_Statement_Identification",stu21);
+                    student2La1marks.put("Objective_Defined",stu22);
+                    student2La1marks.put("Tools_and_Methodology",stu23);
+                    student2La1marks.put("Question_and_Answer",stu24);
+                    student2La1marks.put("Presentation_Skills",stu25);
 
                     mRootRef.child("Marks").child(stud2n).child("ISE1").setValue(student2La1marks)
                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
 
-                                    Intent intent = new Intent(Assignmarksise.this,navActivity.class);
-                                    startActivity(intent);
-                                    finish();
+                                  //  Intent intent = new Intent(Assignmarksise.this,navActivity.class);
+                                    mRootRef.child("MarkStud").child(stud2n).child("ISE1").setValue(finalmarksstud2)
+                                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                @Override
+                                                public void onSuccess(Void aVoid) {
+
+                                                    Intent intent = new Intent(Assignmarksise.this,navActivity.class);
+                                                    startActivity(intent);
+                                                    finish();
+                                                }
+                                            })
+                                            .addOnFailureListener(new OnFailureListener() {
+                                                @Override
+                                                public void onFailure(@NonNull Exception e) {
+                                                    Toast.makeText(Assignmarksise.this, " " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                                                }
+                                            });
+                                   // startActivity(intent);
+                                    //finish();
                                 }
                             })
                             .addOnFailureListener(new OnFailureListener() {
@@ -473,11 +506,11 @@ public class Assignmarksise extends AppCompatActivity {
                     // for stud 3
                     Map<String, String> student3La1marks = new HashMap<String, String>();
                     student3La1marks.put("TotalIse1",finalmarksstud3);
-                    student3La1marks.put("Problem Statement Identification",stu31);
-                    student3La1marks.put("Objective Defined",stu32);
-                    student3La1marks.put("Tools and Methodology",stu33);
-                    student3La1marks.put("Question and Answer",stu34);
-                    student3La1marks.put("Presentation Skills",stu35);
+                    student3La1marks.put("Problem_Statement_Identification",stu31);
+                    student3La1marks.put("Objective_Defined",stu32);
+                    student3La1marks.put("Tools_and_Methodology",stu33);
+                    student3La1marks.put("Question_and_Answer",stu34);
+                    student3La1marks.put("Presentation_Skills",stu35);
 
                     mRootRef.child("Marks").child(stud3n).child("ISE1").setValue(student3La1marks)
                             .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -485,6 +518,22 @@ public class Assignmarksise extends AppCompatActivity {
                                 public void onSuccess(Void aVoid) {
                                     Toast.makeText(Assignmarksise.this, "Added Successfully", Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(Assignmarksise.this,navActivity.class);
+                                    mRootRef.child("MarkStud").child(stud3n).child("ISE1").setValue(finalmarksstud3)
+                                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                @Override
+                                                public void onSuccess(Void aVoid) {
+
+                                                    Intent intent = new Intent(Assignmarksise.this,navActivity.class);
+                                                    startActivity(intent);
+                                                    finish();
+                                                }
+                                            })
+                                            .addOnFailureListener(new OnFailureListener() {
+                                                @Override
+                                                public void onFailure(@NonNull Exception e) {
+                                                    Toast.makeText(Assignmarksise.this, " " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                                                }
+                                            });
                                     startActivity(intent);
                                     finish();
                                 }

@@ -25,9 +25,9 @@ public class Choosestudent extends AppCompatActivity {
 
 
 
-        student1 =getIntent().getStringExtra("stud1name").toString();
-        student2 =getIntent().getStringExtra("stud2name").toString();
-        student3 =getIntent().getStringExtra("stud3name").toString();
+        student1 =getIntent().getStringExtra("stud11name").toString();
+        student2 =getIntent().getStringExtra("stud22name").toString();
+        student3 =getIntent().getStringExtra("stud33name").toString();
         Log.i("stud1",student1);
         Log.i("stud1",student2);
         Log.i("stud1",student3);
@@ -35,9 +35,9 @@ public class Choosestudent extends AppCompatActivity {
         stud1 = findViewById(R.id.txtstu1);
         stud2 = findViewById(R.id.txtstu2);
         stud3 = findViewById(R.id.txtstu3);
-        stud1.setText(getIntent().getStringExtra("stud1name"));
-        stud2.setText(getIntent().getStringExtra("stud2name"));
-        stud3.setText(getIntent().getStringExtra("stud3name"));
+        stud1.setText(getIntent().getStringExtra("stud11name"));
+        stud2.setText(getIntent().getStringExtra("stud22name"));
+        stud3.setText(getIntent().getStringExtra("stud33name"));
         //final String stud1n = getIntent().getStringExtra("stud1name").toString();
         //final String stud2n = getIntent().getStringExtra("stud2name").toString();
         //final String stud3n = getIntent().getStringExtra("stud3name").toString();
@@ -46,9 +46,10 @@ public class Choosestudent extends AppCompatActivity {
         stud1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Choosestudent.this, navActivity.class);
-                intent.putExtra("stud1name",student1);
-
+                Intent intent = new Intent(Choosestudent.this, Recyclemarks.class);
+                intent.putExtra("studname",student1);
+                // intent.putExtra("stud22name",student2);
+                //intent.putExtra("stud33name",student3);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
             }
@@ -56,10 +57,10 @@ public class Choosestudent extends AppCompatActivity {
         stud2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Choosestudent.this, navActivity.class);
-
-                intent.putExtra("stud2name",student2);
-
+                Intent intent = new Intent(Choosestudent.this, Recyclemarks.class);
+               // intent.putExtra("stud11name",student1);
+                intent.putExtra("studname",student2);
+                //intent.putExtra("stud33name",student3);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
             }
@@ -67,9 +68,10 @@ public class Choosestudent extends AppCompatActivity {
         stud3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Choosestudent.this, navActivity.class);
-
-                intent.putExtra("stud3name",student3);
+                Intent intent = new Intent(Choosestudent.this,Recyclemarks.class);
+                //intent.putExtra("stud11name",student1);
+                //intent.putExtra("stud22name",student2);
+                intent.putExtra("studname",student3);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
             }

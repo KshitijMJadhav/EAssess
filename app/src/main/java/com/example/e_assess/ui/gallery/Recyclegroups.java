@@ -48,7 +48,7 @@ public class Recyclegroups extends RecyclerView.Adapter<com.example.e_assess.ui.
         @NonNull
         @Override
         public com.example.e_assess.ui.gallery.Recyclegroups.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            View v = LayoutInflater.from(context).inflate(R.layout.activity_choossegroup,parent,false);
+            View v = LayoutInflater.from(context).inflate(R.layout.choosegroup,parent,false);
             return new com.example.e_assess.ui.gallery.Recyclegroups.MyViewHolder(v);
         }
         //public com.example.e_assess.ui.home.Recyle.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -84,7 +84,7 @@ public class Recyclegroups extends RecyclerView.Adapter<com.example.e_assess.ui.
 
             public MyViewHolder(@Nullable View itemView){
                 super(itemView);
-                Groupno1=itemView.findViewById(R.id.grpno1);
+                Groupno1=itemView.findViewById(R.id.grpno11);
                 gru2=itemView.findViewById(R.id.textView3);
             }
         }

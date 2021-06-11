@@ -66,6 +66,9 @@ public class bottomActivity extends AppCompatActivity {
    @Override
    public boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()){
+            case R.id.download:
+                startActivity(new Intent(bottomActivity.this, FinalMarksShow.class));
+                return true;
             case R.id.Feedback:
                  startActivity(new Intent(bottomActivity.this,FeedbackAdmin.class));
                 return true;

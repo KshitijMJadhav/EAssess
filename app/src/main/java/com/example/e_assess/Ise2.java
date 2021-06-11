@@ -416,21 +416,34 @@ public class Ise2 extends AppCompatActivity {
                     Snackbar.make(v, "Missing Field!", BaseTransientBottomBar.LENGTH_LONG).show();
                 } else {
                     Map<String, String> student1La1marks = new HashMap<String, String>();
-                    student1La1marks.put("Total",finalmarksstud1);
-                    student1La1marks.put("Objective Achieved",stu11);
-                    student1La1marks.put("Project Design",stu12);
-                    student1La1marks.put("Demonstration",stu13);
-                    student1La1marks.put("Incorporation of Suggesstion",stu14);
-                    student1La1marks.put("Question And Answer",stu15);
+                    student1La1marks.put("TotalIse2",finalmarksstud1);
+                    student1La1marks.put("Objective_Achieved_ise2",stu11);
+                    student1La1marks.put("Project_Design_ise2",stu12);
+                    student1La1marks.put("Demonstration_ise2",stu13);
+                    student1La1marks.put("Incorporation_of_Suggesstion_ise2",stu14);
+                    student1La1marks.put("Question_And_Answer_ise2",stu15);
 
                     mRootRef.child("Marks").child(stud1n).child("ISE2").setValue(student1La1marks)
                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
 
-                                    Intent intent = new Intent(Ise2.this,navActivity.class);
-                                    startActivity(intent);
-                                    finish();
+                                    mRootRef.child("MarkStud").child(stud1n).child("ISE2").setValue(finalmarksstud1)
+                                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                @Override
+                                                public void onSuccess(Void aVoid) {
+
+                                                    Intent intent = new Intent(Ise2.this,navActivity.class);
+                                                    startActivity(intent);
+                                                    finish();
+                                                }
+                                            })
+                                            .addOnFailureListener(new OnFailureListener() {
+                                                @Override
+                                                public void onFailure(@NonNull Exception e) {
+                                                    Toast.makeText(Ise2.this, " " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                                                }
+                                            });
                                 }
                             })
                             .addOnFailureListener(new OnFailureListener() {
@@ -444,20 +457,33 @@ public class Ise2 extends AppCompatActivity {
                     // for stud2
                     Map<String, String> student2La1marks = new HashMap<String, String>();
 
-                    student2La1marks.put("Totalise2",finalmarksstud2);
-                    student2La1marks.put("Objective Achieved ise2",stu21);
-                    student2La1marks.put("Project Design ise2",stu22);
-                    student2La1marks.put("Demonstration ise2",stu23);
-                    student2La1marks.put("Incorporation of Suggesstion ise2",stu24);
-                    student2La1marks.put("Question And Answer",stu25);
+                    student2La1marks.put("TotalIse2",finalmarksstud2);
+                    student2La1marks.put("Objective_Achieved_ise2",stu21);
+                    student2La1marks.put("Project_Design_ise2",stu22);
+                    student2La1marks.put("Demonstration_ise2",stu23);
+                    student2La1marks.put("Incorporation_of_Suggesstion_ise2",stu24);
+                    student2La1marks.put("Question_And_Answer_ise2",stu25);
                     mRootRef.child("Marks").child(stud2n).child("ISE2").setValue(student2La1marks)
                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
 
-                                    Intent intent = new Intent(Ise2.this,navActivity.class);
-                                    startActivity(intent);
-                                    finish();
+                                    mRootRef.child("MarkStud").child(stud2n).child("ISE2").setValue(finalmarksstud2)
+                                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                @Override
+                                                public void onSuccess(Void aVoid) {
+
+                                                    Intent intent = new Intent(Ise2.this,navActivity.class);
+                                                    startActivity(intent);
+                                                    finish();
+                                                }
+                                            })
+                                            .addOnFailureListener(new OnFailureListener() {
+                                                @Override
+                                                public void onFailure(@NonNull Exception e) {
+                                                    Toast.makeText(Ise2.this, " " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                                                }
+                                            });
                                 }
                             })
                             .addOnFailureListener(new OnFailureListener() {
@@ -472,20 +498,33 @@ public class Ise2 extends AppCompatActivity {
                     // for stud 3
                     Map<String, String> student3La1marks = new HashMap<String, String>();
 
-                    student3La1marks.put("Totalise2",finalmarksstud3);
-                    student3La1marks.put("Objective Achieved ise2",stu31);
-                    student3La1marks.put("Project Design ise2",stu32);
-                    student3La1marks.put("Demonstration ise2",stu33);
-                    student3La1marks.put("Incorporation of Suggesstion ise2",stu34);
-                    student3La1marks.put("Question And Answer ise2",stu35);
+                    student3La1marks.put("TotalIse2",finalmarksstud3);
+                    student3La1marks.put("Objective_Achieved_ise2",stu31);
+                    student3La1marks.put("Project_Design_ise2",stu32);
+                    student3La1marks.put("Demonstration_ise2",stu33);
+                    student3La1marks.put("Incorporation_of_Suggesstion_ise2",stu34);
+                    student3La1marks.put("Question_And_Answer_ise2",stu35);
                     mRootRef.child("Marks").child(stud3n).child("ISE2").setValue(student3La1marks)
                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
                                     Toast.makeText(Ise2.this, "Added Successfully", Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(Ise2.this,navActivity.class);
-                                    startActivity(intent);
-                                    finish();
+                                    mRootRef.child("MarkStud").child(stud3n).child("ISE2").setValue(finalmarksstud3)
+                                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                @Override
+                                                public void onSuccess(Void aVoid) {
+
+                                                    Intent intent = new Intent(Ise2.this,navActivity.class);
+                                                    startActivity(intent);
+                                                    finish();
+                                                }
+                                            })
+                                            .addOnFailureListener(new OnFailureListener() {
+                                                @Override
+                                                public void onFailure(@NonNull Exception e) {
+                                                    Toast.makeText(Ise2.this, " " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                                                }
+                                            });
                                 };
                             })
                             .addOnFailureListener(new OnFailureListener() {

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:layout_marginTop="10dp"
+    android:clickable="false"
+    app:cardCornerRadius="5.0dip"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="fill_parent"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/card_border">
+
+        <RelativeLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="fill_parent"
+            
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="bottom|center|left"
+                android:layout_marginLeft="16.0dip"
+                android:layout_marginRight="16.0dip"
+                android:layout_marginTop="26.0dip"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@id/frameLayout"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:text="GROUP NO : "
+                        android:textColor="#000000"
+                        android:textSize="22sp" />
+
+                    <TextView
+                        android:id="@+id/grpno11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginLeft="8dp"
+                        android:layout_toRightOf="@id/textView3"
+                        android:maxLength="21"
+                        android:text="GROUP NO"
+                        android:textAppearance="?android:textAppearanceLarge"
+                        android:textColor="#000000" />
+
+
+                </RelativeLayout>
+
+
+
+            </LinearLayout>
+        </RelativeLayout>
+
+       
+    </RelativeLayout>
+</FrameLayout>

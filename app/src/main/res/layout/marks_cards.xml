@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:background="#FFF3E0"
+
+    android:padding="20dp"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FCE4EC"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/studcol"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Student name"
+                android:textColor="#090909"
+                android:textSize="20sp"></TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="99dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:padding="2dp"
+                android:text="ISE1"
+                android:textColor="#090909"
+                android:textSize="18sp"></TextView>
+
+            <TextView
+                android:layout_width="83dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:padding="2dp"
+                android:text="ISE2"
+                android:textColor="#090909"
+                android:textSize="18sp"></TextView>
+
+            <TextView
+                android:layout_width="92dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:padding="2dp"
+                android:text="MSE"
+                android:textColor="#090909"
+                android:textSize="18sp"></TextView>
+
+            <TextView
+                android:layout_width="92dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:padding="2dp"
+                android:text="ESE"
+                android:textColor="#090909"
+                android:textSize="18sp"></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/isecol"
+                android:layout_width="98dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:padding="2dp"
+                android:text="0"
+                android:textColor="#090909"
+                android:textSize="18sp"></TextView>
+
+            <TextView
+                android:id="@+id/ise2col"
+                android:layout_width="83dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:padding="2dp"
+                android:text="0"
+                android:textColor="#090909"
+                android:textSize="18sp"></TextView>
+
+            <TextView
+                android:id="@+id/msecol"
+                android:layout_width="94dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:padding="2dp"
+                android:text="0"
+                android:textColor="#090909"
+                android:textSize="18sp"></TextView>
+
+            <TextView
+                android:id="@+id/esecol"
+                android:layout_width="92dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:padding="2dp"
+                android:text="0"
+                android:textColor="#090909"
+                android:textSize="18sp"></TextView>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Assignmarksise">
+    >
 
     <ScrollView
         android:layout_width="match_parent"
@@ -751,7 +751,7 @@
 
 
                         <TextView
-                            android:id="@+id/ese11"
+                            android:id="@+id/ese"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
@@ -945,7 +945,7 @@
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
                             <TextView
-                                android:id="@+id/Totalese"
+                                android:id="@+id/Totalese11"
                                 android:layout_width="match_parent"
                                 android:layout_height="40dp"
                                 android:gravity="center"

@@ -1,4 +1,4 @@
-package com.example.e_assess;
+/*package com.example.e_assess;
 
 import android.content.Context;
 import android.content.Intent;
@@ -19,11 +19,11 @@ import java.util.ArrayList;
 import javax.annotation.Nullable;
 
 public class adaptermarksise extends RecyclerView.Adapter<com.example.e_assess.adaptermarksise.MyViewHolder> {
-        ArrayList<Marks> mlist;
+        ArrayList<Marks> list;
         Context context;
 
-public adaptermarksise(Context context, ArrayList<Marks> mlist){
-        this.mlist = mlist;
+public adaptermarksise(Context context, ArrayList<Marks> list){
+        this.list = list;
         this.context= context;
         }
 
@@ -44,13 +44,13 @@ public adaptermarksise.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent
 //return new com.example.e_assess.ui.home.Guide.MyViewHolder(v);
 //}
 public void onBindViewHolder(@NonNull adaptermarksise.MyViewHolder holder, int position) {
-final   Marks marks = mlist.get(position);
-        holder.Totalise.setText(marks.getTotalise());
-        holder.R1ise1.setText(marks.getR1ise1());
-        holder.R2ise1.setText(marks.getR2ise1());
-        holder.R3ise1.setText(marks.getR3ise1());
-        holder.R4ise1.setText(marks.getR4ise1());
-        holder.R5ise1.setText(marks.getR5ise1());
+final   Marks marks = list.get(position);
+        holder.Totalise.setText(marks.getTotalIse1());
+        holder.R1ise1.setText(marks.getProblem_Statement_Identification());
+        holder.R2ise1.setText(marks.getObjective_Defined());
+        holder.R3ise1.setText(marks.getTools_and_Methodology());
+        holder.R4ise1.setText(marks.getQuestion_and_Answer());
+        holder.R5ise1.setText(marks.getPresentation_Skills());
         /*holder.asignmarksicon.setOnClickListener(new View.OnClickListener() {
 @Override
 public void onClick(View v) {
@@ -61,13 +61,13 @@ public void onClick(View v) {
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
         }
-        });*/
-        }
+        });
+        }*/
 
 
-@Override
+/*@Override
 public int getItemCount() {
-        return mlist.size();
+        return list.size();
         }
 
 public static  class MyViewHolder extends RecyclerView.ViewHolder{
@@ -78,7 +78,6 @@ public static  class MyViewHolder extends RecyclerView.ViewHolder{
     public MyViewHolder(@Nullable View itemView){
         super(itemView);
        Totalise=itemView.findViewById(R.id.Totalstud1);
-
         R1ise1=itemView.findViewById(R.id.rubric1stud1);
         R2ise1=itemView.findViewById(R.id.rubric2stud1);
         R3ise1=itemView.findViewById(R.id.rubric3stud1);
@@ -101,8 +100,6 @@ public static  class MyViewHolder extends RecyclerView.ViewHolder{
         R2ese=itemView.findViewById(R.id.rubric2esestud1);
         R3ese=itemView.findViewById(R.id.rubric3esestud1);
         R4ese=itemView.findViewById(R.id.rubric4esestud1);
-        R5ese=itemView.findViewById(R.id.rubric5esestud1);*/
+        R5ese=itemView.findViewById(R.id.rubric5esestud1);
     }
-}
-
-}
+}*/

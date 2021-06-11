@@ -51,8 +51,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             @Override
             public void onClick(View v) {
                 Toast.makeText(context, "hii " + model.getUerid().toString(), Toast.LENGTH_SHORT).show();
+
                 //context.startActivity(new Intent(context, GroupsShowAdminViewModel.class));
                 String uidd = model.getUerid();
+
+                //ntent i=new Intent(Context,GroupAdmin.class);
+                //i.putExtra("stud1name",model.getUerid());
               //  AppCompatActivity activity = (AppCompatActivity)v.getContext();
               //  BlankFragment frag =new BlankFragment(uidd);
              //   activity.getSupportFragmentManager().beginTransaction().replace(R.id.ganpatibappamourya,frag).addToBackStack(null).commit();
