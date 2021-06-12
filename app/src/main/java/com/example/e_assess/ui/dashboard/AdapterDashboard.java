@@ -38,6 +38,8 @@ public class AdapterDashboard extends RecyclerView.Adapter<AdapterDashboard.MyVi
   holder.Student2.setText(model.getStudent2());
   holder.Student3.setText(model.getStudent3());
   holder.TopicName.setText(model.getTopicName());
+        holder.group.setText(model.getGroupNo());
+        holder.guide.setText(model.getGuideName());
     }
 
     @Override
@@ -46,13 +48,16 @@ public class AdapterDashboard extends RecyclerView.Adapter<AdapterDashboard.MyVi
     }
 
     public static  class MyViewHolder extends RecyclerView.ViewHolder{
-      TextView Student1,Student2,Student3,TopicName;
+      TextView Student1,Student2,Student3,TopicName,guide,group;
         public MyViewHolder(@Nullable View itemView){
               super(itemView);
               Student1 = itemView.findViewById(R.id.textstud1name);
             Student2 = itemView.findViewById(R.id.textstud2name);
             Student3 = itemView.findViewById(R.id.textstud3name);
             TopicName = itemView.findViewById(R.id.txttopicname);
+            guide=itemView.findViewById(R.id.txtguide);
+            group=itemView.findViewById(R.id.grpnoadmin);
+
         }
     }
 

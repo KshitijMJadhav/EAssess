@@ -12,8 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EAssess"
         android:usesCleartextTraffic="true">
-        <activity android:name=".FinalMarksShow"></activity>
-        <activity android:name=".Recyclemarks"></activity>
+        <activity android:name=".ResetPassword"></activity>
+        <activity android:name=".FinalMarksShow" />
+        <activity android:name=".Recyclemarks" />
         <activity android:name=".Choosestudent" />
         <activity android:name=".Ese" />
         <activity android:name=".Mse" />

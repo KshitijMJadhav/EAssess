@@ -53,14 +53,15 @@ public class DashboardFragment extends Fragment {
 
                              //   ModelDashboard mod = data.getValue(ModelDashboard.class);
                              // list.add(mod);
-                             String stud1, stud2, stud3, topic, grpno;
+                             String stud1, stud2, stud3, topic, grpno,guide;
                              //for(DataSnapshot data : dataSnapshot.getChildren()){
                              grpno = dat.child("GroupNo").getValue(String.class);
                              stud1 = dat.child("Student1").getValue(String.class);
                              stud2 = dat.child("Student2").getValue(String.class);
                              stud3 = dat.child("Student3").getValue(String.class);
                              topic = dat.child("TopicName").getValue(String.class);
-                             ModelDashboard model = new ModelDashboard(grpno, stud1, stud2, stud3, topic);
+                             guide=dat.child("GuideName").getValue(String.class);
+                             ModelDashboard model = new ModelDashboard( stud1, stud2, stud3,topic,grpno,guide);
                              list.add(model);
                              // adapter.notifyDataSetChanged();
 

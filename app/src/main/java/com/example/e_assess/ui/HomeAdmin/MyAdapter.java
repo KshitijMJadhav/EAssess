@@ -50,7 +50,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         holder.name.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "hii " + model.getUerid().toString(), Toast.LENGTH_SHORT).show();
+                //T0oast.makeText(context, "hii " + model.getUerid().toString(), Toast.LENGTH_SHORT).show();
 
                 //context.startActivity(new Intent(context, GroupsShowAdminViewModel.class));
                 String uidd = model.getUerid();

@@ -40,12 +40,17 @@ import com.google.android.material.snackbar.SnackbarContentLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.net.URI;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -57,14 +62,21 @@ public class addStudent extends AppCompatActivity {
     private FirebaseAuth auth;
     private DatabaseReference mRootRef;
     FirebaseUser user ;
+    //Spinner spinner;
+    //ValueEventListener listener;
+    //ArrayAdapter<String> adapter;
+    //ArrayList<String> spinnerdatalist;
 
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_student);
+        //spinner=(Spinner)findViewById(R.id.myspinner);
 
-
+        database=FirebaseDatabase.getInstance().getReference("Users");
+        //spinnerdatalist=new ArrayList<>();
+        //dapter=new ArrayAdapter<String>(addStudent.this,R.layout.support_simple_spinner_dropdown_item,spinnerdatalist);
         auth = FirebaseAuth.getInstance();
         mRootRef = FirebaseDatabase.getInstance().getReference();
 
@@ -125,8 +137,28 @@ public class addStudent extends AppCompatActivity {
             }
 
         });
-
-
+        //spinner.setAdapter(adapter);
+        //retrivedata();
 
     }
+    /*public void retrivedata()
+    {
+        listener=database.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot dataSnapshot:snapshot.getChildren()) {
+                    final String s = snapshot.child("name").getValue(String.class);
+                    spinnerdatalist.add(s);
+                }
+                   // spinnerdatalist.add(dataSnapshot.getValue().toString());
+                adapter.notifyDataSetChanged();
+            }
+
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }*/
 }

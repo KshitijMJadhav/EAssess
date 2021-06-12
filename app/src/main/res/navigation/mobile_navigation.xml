@@ -20,6 +20,6 @@
     <fragment
         android:id="@+id/nav_slideshow"
         android:name="com.example.e_assess.ui.slideshow.SlideshowFragment"
-        android:label="Download"
+        android:label="Summary"
         tools:layout="@layout/fragment_slideshow" />
 </navigation>

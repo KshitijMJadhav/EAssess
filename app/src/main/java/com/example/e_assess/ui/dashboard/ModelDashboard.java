@@ -1,18 +1,26 @@
 package com.example.e_assess.ui.dashboard;
 
 public class ModelDashboard {
-    String Student1,Student2,Student3,TopicName,GroupNo;
+    String Student1,Student2,Student3,TopicName,GroupNo,GuideName;
 
-
-    public ModelDashboard(String GroupNo,String student1, String student2, String student3, String topicName) {
+    public ModelDashboard(String student1, String student2, String student3, String topicName, String groupNo, String guideName) {
         Student1 = student1;
         Student2 = student2;
         Student3 = student3;
         TopicName = topicName;
-        this.GroupNo=GroupNo;
+        GroupNo = groupNo;
+        GuideName = guideName;
     }
 
     public ModelDashboard() {
+    }
+
+    public String getGuideName() {
+        return GuideName;
+    }
+
+    public void setGuideName(String guideName) {
+        GuideName = guideName;
     }
 
     public String getStudent1() {

@@ -49,6 +49,8 @@ public class MyadapterGroupAdmin extends RecyclerView.Adapter<MyadapterGroupAdmi
         holder.stud2.setText(model.getStudent2());
         holder.stud3.setText(model.getStudent3());
         holder.topicname.setText(model.getTopicName());
+
+
     }
 
     @Override

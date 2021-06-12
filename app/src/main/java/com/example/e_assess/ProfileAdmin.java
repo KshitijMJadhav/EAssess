@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
@@ -14,6 +15,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class ProfileAdmin extends AppCompatActivity {
     private FirebaseUser user;
     TextView txtmailshow ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,8 +25,9 @@ public class ProfileAdmin extends AppCompatActivity {
 
         String mailid = user.getEmail().toString();
         txtmailshow = findViewById(R.id.showmail);
-
+        //reset=findViewById(R.id.buttonresetpass);
         txtmailshow.setText(mailid);
+
 
     }
 
@@ -34,4 +37,11 @@ public class ProfileAdmin extends AppCompatActivity {
         startActivity(new Intent(ProfileAdmin.this, choiceActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK));
         finish();
     }
+    public void resetpass(View view)
+    {
+        Intent i=new Intent(ProfileAdmin.this,ResetPassword.class);
+        startActivity(i);
+        finish();
+    }
+
 }
