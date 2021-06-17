@@ -17,15 +17,16 @@
         android:layout_height="match_parent"
         android:background="@drawable/card_border"
         android:orientation="vertical">
+
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentStart="true"
             android:orientation="horizontal">
 
 
@@ -34,50 +35,42 @@
                 android:layout_width="wrap_content"
                 android:layout_height="25dp"
 
-                android:text="Group No : "
+                android:text="Group No      :   "
 
                 android:textColor="#000000"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/grpnoadmin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:layout_marginLeft="8dp"
-                android:layout_toRightOf="@id/textView3"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="126dp"
+                android:layout_marginLeft="126dp"
+                android:foregroundGravity="right"
+                android:gravity="left"
                 android:maxLength="21"
-                android:text="Grouo No"
+                android:text="5"
                 android:textAppearance="?android:textAppearanceLarge"
                 android:textColor="#000000"
                 android:textSize="18sp"
                 android:textStyle="bold" />
-            <ImageButton
-
-                android:layout_toRightOf="@id/grpnoadmin"
-                android:layout_width="24.0dip"
-                android:layout_height="24.0dip"
-                android:layout_gravity="bottom|center|right"
-                android:layout_marginLeft="170dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginBottom="16dp"
-                android:id="@+id/deletegrp"
-
-                android:background="@drawable/del"
-                android:clickable="true"
-                 />
 
 
         </RelativeLayout>
+
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="1dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentStart="true"
             android:orientation="horizontal">
 
 
@@ -86,10 +79,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="25dp"
 
-                android:text="Guide Name : Prof."
+                android:text="Guide Name :            Prof."
 
                 android:textColor="#000000"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/txtguide"
@@ -98,6 +92,7 @@
 
                 android:layout_marginLeft="8dp"
                 android:layout_toRightOf="@id/textView4"
+                android:gravity="start"
                 android:maxLength="21"
                 android:text="GuideName"
                 android:textAppearance="?android:textAppearanceLarge"
@@ -107,15 +102,16 @@
 
 
         </RelativeLayout>
+
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="1dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentStart="true"
             android:orientation="horizontal">
 
 
@@ -124,18 +120,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="25dp"
 
-                android:text="Topic Name : "
+                android:text="Topic Name  :    "
 
                 android:textColor="#000000"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/txttopicname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:layout_marginLeft="8dp"
-                android:layout_toRightOf="@id/textView5"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="127dp"
+                android:layout_marginLeft="127dp"
+                android:foregroundGravity="left"
+                android:gravity="start"
                 android:maxLength="21"
                 android:text="Topic Name"
                 android:textAppearance="?android:textAppearanceLarge"
@@ -174,14 +175,27 @@
         <TextView
             android:id="@+id/textstud3name"
             android:layout_width="match_parent"
-            android:layout_height="39dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_marginLeft="20dp"
             android:fontFamily="sans-serif-medium"
-            android:padding="5dp"
+            android:padding="2dp"
             android:text="student3 name"
             android:textColor="#000"
             android:textSize="18sp" />
+
+        <ImageButton
+
+            android:id="@+id/deletegrp"
+            android:layout_width="24.0dip"
+            android:layout_height="24.0dip"
+            android:layout_gravity="bottom|center|right"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+
+            android:background="@drawable/del"
+            android:clickable="true"
+            android:onClick="callldeletegrp" />
 
 
     </LinearLayout>
